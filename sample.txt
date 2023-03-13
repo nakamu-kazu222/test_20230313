@@ -2,3 +2,4 @@
 add 変更をインデックスに登録する
 test
 test2
+test3
