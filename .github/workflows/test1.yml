@@ -23,10 +23,5 @@ jobs:
       uses: slackapi/slack-github-action@v1.16.0
       with:
         channel-id: 'C05HD5RS9U1'
-        payload: |
-          {
-            "text": ":writing_hand: ビルド結果: ${{ job.status }}\n${{ github.event.release.html_url }}\n```${{ steps.get_release_note.outputs.body }}```",
-            "unfurl_links": false
-          }
       env:
         SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
