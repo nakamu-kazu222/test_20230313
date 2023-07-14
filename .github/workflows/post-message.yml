@@ -22,25 +22,7 @@ jobs:
           channel-id: 'C05HD5RS9U1'
           payload: |
             {
-              "text": ":github: ビルド結果: ${{ job.status }}\n\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
-              "blocks": [
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": ":github: ビルド結果: ${{ job.status }}\n\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
-                  }
-                },
-                {
-                  "type": "context",
-                  "elements": [
-                    {
-                      "type": "mrkdwn",
-                      "text": "Author: <https://github.com/${{ github.event.sender.login }}|@${{ github.event.sender.login }}>"
-                    }
-                  ]
-                }
-              ]
+              "text": "New release: ${{ github.repository }}@${{ github.event.release.tag_name }}\n${{ github.event.release.body }}"
             }
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
