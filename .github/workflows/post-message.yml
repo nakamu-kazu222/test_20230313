@@ -20,7 +20,7 @@ jobs:
           # チャンネル名が変更されると動かなくなるので
           # 実運用では C1QAUTY0M のような ID を使ってください
           channel-id: 'C05HD5RS9U1'
-          payload: |
+          payload:
             {
               "text": "New release: ${{ github.repository }}@${{ github.event.release.tag_name }}\n\n${{ github.event.release.body }}",
               "mrkdwn": true
